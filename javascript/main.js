@@ -14,6 +14,7 @@ var CarLot = (function (original) {
 
 	 	var mainDiv = document.getElementById("container");
 	 	var createdDiv = document.createElement("DIV");
+	 	createdDiv.classList.add("row");
 	 	var n = 1;
 	 		for (var i = 0; i < inventory.length; i++) {
 
@@ -29,6 +30,7 @@ var CarLot = (function (original) {
 				mainDiv.appendChild(createdDiv);
 				if (i === ((n * 3) - 1)) {
 					createdDiv = document.createElement("DIV");
+					createdDiv.classList.add("row");
 					n++;
 				}
 	 		}
