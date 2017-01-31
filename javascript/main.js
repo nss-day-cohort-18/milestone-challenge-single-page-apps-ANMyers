@@ -63,17 +63,3 @@ var CarLot = (function (original) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-

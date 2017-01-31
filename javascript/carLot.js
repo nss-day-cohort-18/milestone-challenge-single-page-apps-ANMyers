@@ -37,11 +37,3 @@ var CarLot = (function (original) {
 
 
 
-
-
-
-
-// for (var i = 0; i < inventory.length; i++) {
-//         var consoleLogMe = inventory[i].something;
-//         console.log(consoleLogMe);
-//       };
