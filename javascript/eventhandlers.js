@@ -44,17 +44,6 @@ var CarLot = (function (original) {
 
 
 
-// function edit(event) {
-//   for (var l = 0; l < famousPeople.length; l++) {
-//     if (cardSectionArticle[l].classList.contains("border")) {
-//       bioSection[l].childNodes[1].innerHTML = document.getElementById("input").value;
-//     }
-//   }
-//   if (event.keyCode == 13) {
-//     input.value = "";
-//   }
-// }
-
 
 
 

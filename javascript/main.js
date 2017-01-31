@@ -2,55 +2,37 @@
 
 var CarLot = (function (original) {
 
-	var carInventory = []
-	var l = 0;
+	var carInventory = [];
 
-	setTimeout(function(){ 
-		CarLot.loadInventory();
-	}, 15);
-
+	// setTimeout(function(){ 
+	// 	CarLot.loadInventory();
+	// }, 15);
     
-
-
 	original.populatePage = function (inventory) {
 
 		carInventory = inventory;
 
-	  	// Loop over the inventory and populate the page
 	 	var mainDiv = document.getElementById("container");
+	 	var createdDiv = document.createElement("DIV");
+	 	var n = 1;
+	 		for (var i = 0; i < inventory.length; i++) {
 
-			for (var i = 0; i < inventory.length; i = i + 3) {
+	 			var putToDiv = `<div class="col-sm-4 bordered" id="${inventory[i].year}-${inventory[i].model}">
+		   							<h3>${inventory[i].make} ${inventory[i].model}</h3>
+						    		<img src="../${inventory[i].image}" alt="${inventory[i].year} ${inventory[i].make} ${inventory[i].model}">
+							    	<p>${inventory[i].year}</p>
+						    		<p>$${inventory[i].price}</p>
+							    	<p>${inventory[i].description}</p>
+						    	</div>`;
 
-				var putToDiv = 
-	  					`<div class="row">
-	  						<div class="col-sm-4 bordered" id="${inventory[i].year}-${inventory[i].model}">
-	  							<h3>${inventory[i].make} ${inventory[i].model}</h3>
-						    	<img src="../${inventory[i].image}" alt="${inventory[i].year} ${inventory[i].make} ${inventory[i].model}">
-						    	<p>${inventory[i].year}</p>
-						    	<p>$${inventory[i].price}</p>
-						    	<p>${inventory[i].description}</p>
-						    </div>
-						    <div class="col-sm-4 bordered" id="${inventory[i + 1].year}-${inventory[i + 1].model}">
-	  							<h3>${inventory[i + 1].make} ${inventory[i + 1].model}</h3>
-						    	<img src="../${inventory[i + 1].image}" alt="${inventory[i + 1].year} ${inventory[i + 1].make} ${inventory[i + 1].model}">
-						    	<p>${inventory[i + 1].year}</p>
-						    	<p>$${inventory[i + 1].price}</p>
-						    	<p>${inventory[i + 1].description}</p>
-						    </div>
-						    <div class="col-sm-4 bordered" id="${inventory[i + 2].year}-${inventory[i + 2].model}">
-	  							<h3>${inventory[i + 2].make} ${inventory[i + 2].model}</h3>
-						    	<img src="../${inventory[i + 2].image}" alt="${inventory[i + 2].year} ${inventory[i + 2].make} ${inventory[i + 2].model}">
-						    	<p>${inventory[i + 2].year}</p>
-						    	<p>$${inventory[i + 2].price}</p>
-						    	<p>${inventory[i + 2].description}</p>
-						    </div>
-						</div>`
-
-				mainDiv.innerHTML += putToDiv
-			}
-
+				createdDiv.innerHTML += putToDiv;
+				mainDiv.appendChild(createdDiv);
+				if (i === ((n * 3) - 1)) {
+					createdDiv = document.createElement("DIV");
+					n++;
+				}
+	 		}
 		CarLot.activateEvents();
-
 	}
 
 	original.activateEvents = function (dontjudgeme) {
@@ -58,19 +40,20 @@ var CarLot = (function (original) {
 		var inputText = document.getElementById("descrip-input");
 		for (var i = 0; i < carCards.length; i++) {
 			carCards[i].addEventListener('click', (e) => {
-				if (l === 0) {
-					CarLot.changeBorder(event.target.parentElement, "lightenedblue");
-					l = 1;
+				
+				if (event.currentTarget.classList.contains("lightenedblue") === false) {
+					for (var n = 0; n < carCards.length; n++){
+						carCards[n].classList.remove("lightenedblue");
+					}
+					CarLot.changeBorder(event.currentTarget, "lightenedblue");
 				} else {
-					CarLot.borderReset(event.target.parentElement, "lightenedblue");
-					l = 0;
+					CarLot.borderReset(event.currentTarget, "lightenedblue");
 				}
 			});
 		}
-
 	}
 	
-
+	CarLot.loadInventory();
 
   return original;
 
