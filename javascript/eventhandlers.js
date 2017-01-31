@@ -16,6 +16,9 @@ var CarLot = (function (original) {
       }
       if (event.keyCode === 13) {
         inputField.value = "";
+        for (var n = 0; n < cardSections.length; n++){
+            cardSections[n].classList.remove("lightenedblue");
+          }
       }
     }
 

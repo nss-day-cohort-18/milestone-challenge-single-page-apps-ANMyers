@@ -33,3 +33,15 @@ var CarLot = (function (original) {
   return original;
 
 })(CarLot || {});
+
+
+
+
+
+
+
+
+// for (var i = 0; i < inventory.length; i++) {
+//         var consoleLogMe = inventory[i].something;
+//         console.log(consoleLogMe);
+//       };
