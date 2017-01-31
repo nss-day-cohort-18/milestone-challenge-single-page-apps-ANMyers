@@ -1,0 +1,28 @@
+{
+  "cars": [
+    {
+    	"image": "images/nissan-rogue.jpg",
+    	"make": "Nissan",
+    	"model": "Rogue",
+    	"year": "2006",
+    	"price": "8999",
+    	"description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats, power everything."
+    },
+    {
+    	"image": "images/Hyundai-Tiburon.jpg",
+    	"make": "Hyundai",
+    	"model": "Tiburon",
+    	"year": "2003",
+    	"price": "3999",
+    	"description": "This is an amazingly beat down automobile that may or may not run for you, it is equiped with 'somewhat' powered windows, a working radio, and luxurious stained front passenger seat."
+    },
+    {
+    	"image": "images/ford-f250.jpg",
+    	"make": "Ford",
+    	"model": "F250",
+    	"year": "1988",
+    	"price": "2.99",
+    	"description": "Please buy this vehicle, it is equiped with manually powered windows, a very loose belt, and a motor that will probably backfire but somehow still runs."
+    }
+  ]
+}
