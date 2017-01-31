@@ -18,11 +18,11 @@ var CarLot = (function (original) {
 	 	var n = 1;
 	 		for (var i = 0; i < inventory.length; i++) {
 
-	 			var putToDiv = `<div class="col-sm-4 bordered" id="${inventory[i].year}-${inventory[i].model}">
+	 			var putToDiv = `<div class="col-sm-3 offset-sm-1 bordered" id="${inventory[i].year}-${inventory[i].model}">
 		   							<h3>${inventory[i].make} ${inventory[i].model}</h3>
 						    		<img src="../${inventory[i].image}" alt="${inventory[i].year} ${inventory[i].make} ${inventory[i].model}">
-							    	<p>${inventory[i].year}</p>
-						    		<p>$${inventory[i].price}</p>
+							    	<p>Year: ${inventory[i].year}</p>
+						    		<p>Price: $${inventory[i].price}</p>
 							    	<p>${inventory[i].description}</p>
 						    	</div>`;
 
@@ -38,7 +38,7 @@ var CarLot = (function (original) {
 	}
 
 	original.activateEvents = function (dontjudgeme) {
-		var carCards = document.getElementsByClassName("col-sm-4");
+		var carCards = document.getElementsByClassName("col-sm-3");
 		var inputText = document.getElementById("descrip-input");
 		for (var i = 0; i < carCards.length; i++) {
 			carCards[i].addEventListener('click', (e) => {
